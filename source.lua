@@ -168,3 +168,21 @@ healthSlider = localplayerTab:CreateSlider({
        end
    end,
 })
+
+local ehvbtdSection = localplayerTab:CreateSection("Edit Humanoid Variables Back to Default")
+
+local Button = localplayerTab:CreateButton({
+   Name = "Change Walk Speed Back to Default",
+   Callback = function()
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = 16
+   WALKSPEED = 16
+   end,
+})
+
+local Button = localplayerTab:CreateButton({
+   Name = "Change Jump Power Back to Default",
+   Callback = function()
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = 50
+   JUMPPOWER = 50
+   end,
+})
