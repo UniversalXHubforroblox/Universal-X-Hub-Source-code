@@ -46,9 +46,29 @@ local Slider = localplayerTab:CreateSlider({
    Increment = 1,
    Suffix = "% Speed",
    CurrentValue = 16,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "Slider1",
    Callback = function(WALKSPEED)
-	game.Players.LocalPlayer.Character.Humanoid.Walkspeed = WALKSPEED
+       local player = game.Players.LocalPlayer
+       if player and player.Character then
+           local humanoid = player.Character:FindFirstChild("Humanoid")
+           if humanoid then
+               humanoid.WalkSpeed = WALKSPEED
+           else
+               Rayfield:Notify({
+   Title = "Humanoid Not Found",
+   Content = "Your Character models properties are not loaded, re-execute the script when game is fully loaded.",
+   Duration = 5,
+   Image = nil,
+})
+           end
+       else
+           Rayfield:Notify({
+   Title = "Character Not Found",
+   Content = "Your Character is not loaded, re-execute the script when game is fully loaded.",
+   Duration = 5,
+   Image = nil,
+})
+       end
    end,
 })
 
@@ -58,8 +78,28 @@ local Slider = localplayerTab:CreateSlider({
    Increment = 1,
    Suffix = "% Power",
    CurrentValue = 50,
-   Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "Slider2",
    Callback = function(JUMPPOWER)
-	game.Players.LocalPlayer.Character.Humanoid.JumpPower = JUMPPOWER
+       local player = game.Players.LocalPlayer
+       if player and player.Character then
+           local humanoid = player.Character:FindFirstChild("Humanoid")
+           if humanoid then
+               humanoid.JumpPower = JUMPPOWER
+           else
+               Rayfield:Notify({
+   Title = "Humanoid Not Found",
+   Content = "Your Character models properties are not loaded, re-execute the script when game is fully loaded.",
+   Duration = 5,
+   Image = nil,
+})
+           end
+       else
+           Rayfield:Notify({
+   Title = "Character Not Found",
+   Content = "Your Character is not loaded, re-execute the script when game is fully loaded.",
+   Duration = 5,
+   Image = nil,
+})
+       end
    end,
 })
