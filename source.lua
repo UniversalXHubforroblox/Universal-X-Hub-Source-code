@@ -2,10 +2,10 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
    Name = "🌐 Universal X GUI 🌐",
-   Icon = 0,
+   Icon = 0, 
    LoadingTitle = "🌐 Universal X GUI 🌐",
    LoadingSubtitle = "the BEST universal GUI Out RN😱😱",
-   Theme = "Default",
+   Theme = "Default", 
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil,
@@ -22,7 +22,7 @@ local Window = Rayfield:CreateWindow({
    KeySettings = {
       Title = "🌐 Universal X GUI 🌐 | Human Verification Key System (HVKG)",
       Subtitle = "Key System",
-      Note = "get key at https://pastebin.com/raw/gaft842c for human verification! (NO ADS | RAW | DIRECT LINK)",
+      Note = "get key at https://pastebin.com/raw/gaft842c for human verification! (NO ADS | RAW | DIRECT LINK)", 
       FileName = "UniversalXGUIHVKsystem",
       SaveKey = true,
       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
@@ -42,12 +42,24 @@ Rayfield:Notify({
 
 local Slider = localplayerTab:CreateSlider({
    Name = "WalkSpeed",
-   Range = {16, 100},
+   Range = {0, 500},
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 16,
    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(WALKSPEED)
-      game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = WALKSPEED -- Corrected WalkSpeed casing
+	game.Players.LocalPlayer.Character.Humanoid.Walkspeed = WALKSPEED
+   end,
+})
+
+local Slider = localplayerTab:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {0, 1000},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 50,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(JUMPPOWER)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = JUMPPOWER
    end,
 })
