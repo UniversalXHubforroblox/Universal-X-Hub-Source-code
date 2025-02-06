@@ -41,7 +41,7 @@ Rayfield:Notify({
 })
 
 local Slider = localplayerTab:CreateSlider({
-   Name = "WalkSpeed",
+   Name = "Walk Speed",
    Range = {0, 500},
    Increment = 1,
    Suffix = "Speed",
@@ -53,7 +53,7 @@ local Slider = localplayerTab:CreateSlider({
 })
 
 local Slider = localplayerTab:CreateSlider({
-   Name = "WalkSpeed",
+   Name = "Jump Power",
    Range = {0, 1000},
    Increment = 1,
    Suffix = "Speed",
