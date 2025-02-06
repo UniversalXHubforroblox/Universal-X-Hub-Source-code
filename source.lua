@@ -31,7 +31,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local localplayerTab = Window:CreateTab("✏️Local Player", nil)
-local localplayerSection = localplayerTab:CreateSection("Main")
+local localplayerSection = localplayerTab:CreateSection("Editing Humanoid Variables")
 
 Rayfield:Notify({
    Title = "Universal X GUI Has Executed Successfully!",
@@ -85,6 +85,39 @@ local Slider = localplayerTab:CreateSlider({
            local humanoid = player.Character:FindFirstChild("Humanoid")
            if humanoid then
                humanoid.JumpPower = JUMPPOWER
+           else
+               Rayfield:Notify({
+   Title = "Humanoid Not Found",
+   Content = "Your Character models properties are not loaded, re-execute the script when game is fully loaded.",
+   Duration = 5,
+   Image = nil,
+})
+           end
+       else
+           Rayfield:Notify({
+   Title = "Character Not Found",
+   Content = "Your Character is not loaded, re-execute the script when game is fully loaded.",
+   Duration = 5,
+   Image = nil,
+})
+       end
+   end,
+      
+})
+
+local Slider = localplayerTab:CreateSlider({
+   Name = "Max Health",
+   Range = {50, 1000},
+   Increment = 1,
+   Suffix = "is the Max Health",
+   CurrentValue = 100,
+   Flag = "Slider3",
+   Callback = function(MAXHEALTH)
+       local player = game.Players.LocalPlayer
+       if player and player.Character then
+           local humanoid = player.Character:FindFirstChild("Humanoid")
+           if humanoid then
+               humanoid.MaxHealth = MAXHEALTH
            else
                Rayfield:Notify({
    Title = "Humanoid Not Found",
