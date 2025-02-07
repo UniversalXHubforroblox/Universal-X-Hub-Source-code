@@ -169,3 +169,7 @@ local Button = localplayerTab:CreateButton({
    JUMPPOWER = 50
    end,
 })
+
+local affectallplayersTab = Window:CreateTab("Affect All Players", nil)
+local Section = Tab:CreateSection("Troll Tools")]
+
