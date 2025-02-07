@@ -169,12 +169,3 @@ local Button = localplayerTab:CreateButton({
    JUMPPOWER = 50
    end,
 })
-
-local MoreStuffSection = localplayerTab:CreateSection("More Stuff")
-
-local Button = localplayerTab:CreateButton({
-   Name = "Regenerate Health",
-   Callback = function())
-   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = MAXHEALTH
-   end,
-})
