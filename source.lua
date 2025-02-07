@@ -18,15 +18,15 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
-   KeySystem = true,
+   KeySystem = false,
    KeySettings = {
-      Title = "🌐 Universal X GUI 🌐 | Human Verification Key System (HVKG)",
-      Subtitle = "Key System",
-      Note = "get key at https://pastebin.com/raw/gaft842c for human verification! (NO ADS | RAW | DIRECT LINK)", 
-      FileName = "UniversalXGUIHVKsystem",
+      Title = " ",
+      Subtitle = " ",
+      Note = " ", 
+      FileName = " ",
       SaveKey = true,
       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"https://pastebin.com/raw/gaft842c"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Key = {" "} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
 
