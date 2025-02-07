@@ -40,6 +40,13 @@ Rayfield:Notify({
    Image = nil,
 })
 
+Rayfield:Notify({
+   Title = "Remember..",
+   Content = "...Some Of The Scripts Will NOT Work on Some Games due to Anti Cheat Mechanics",
+   Duration = 4,
+   Image = nil,
+})
+
 local Slider = localplayerTab:CreateSlider({
    Name = "Walk Speed",
    Range = {0, 500},
@@ -137,42 +144,10 @@ maxHealthSlider = localplayerTab:CreateSlider({
    end,
 })
 
-healthSlider = localplayerTab:CreateSlider({
-   Name = "Health",
-   Range = {1, 100},  -- Default range (updated dynamically by Max Health slider)
-   Increment = 1,
-   Suffix = "is your Health",
-   CurrentValue = 100,
-   Flag = "Slider_Health",
-   Callback = function(HEALTH)
-       local player = game.Players.LocalPlayer
-       if player and player.Character then
-           local humanoid = player.Character:FindFirstChild("Humanoid")
-           if humanoid then
-               humanoid.Health = math.min(HEALTH, humanoid.MaxHealth) -- Ensure health does not exceed max health
-           else
-               Rayfield:Notify({
-                   Title = "Humanoid Not Found",
-                   Content = "Your Character model's properties are not loaded, re-execute the script when game is fully loaded.",
-                   Duration = 5,
-                   Image = nil,
-               })
-           end
-       else
-           Rayfield:Notify({
-               Title = "Character Not Found",
-               Content = "Your Character is not loaded, re-execute the script when the game is fully loaded.",
-               Duration = 5,
-               Image = nil,
-           })
-       end
-   end,
-})
-
 local ehvbtdSection = localplayerTab:CreateSection("Edit Humanoid Variables Back to Default")
 
 local Button = localplayerTab:CreateButton({
-   Name = "Change Walk Speed Back to Default",
+   Name = "Change Walk Speed Back to Default (16)",
    Callback = function()
    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = 16
    WALKSPEED = 16
@@ -180,9 +155,34 @@ local Button = localplayerTab:CreateButton({
 })
 
 local Button = localplayerTab:CreateButton({
-   Name = "Change Jump Power Back to Default",
+   Name = "Change Jump Power Back to Default (50)",
    Callback = function()
    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = 50
    JUMPPOWER = 50
+   end,
+})
+
+local Button = localplayerTab:CreateButton({
+   Name = "Change Max Health Back to Default (100)",
+   Callback = function()
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").MaxHealth = 100
+   JUMPPOWER = 50
+   end,
+})
+
+local MoreStuffSection = localplayerTab:CreateSection("More Stuff")
+
+local Button = localplayerTab:CreateButton({
+   Name = "Regenerate Health",
+   Callback = function())
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = MAXHEALTH
+   end,
+})
+
+local Button = localplayerTab:CreateButton({
+   Name = "Invinciblilty",
+   Callback = function())
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").MaxHealth = 1000000000000000000000000000000000000000000000000000000000000
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 1000000000000000000000000000000000000000000000000000000000000
    end,
 })
