@@ -171,5 +171,5 @@ local Button = localplayerTab:CreateButton({
 })
 
 local affectallplayersTab = Window:CreateTab("Affect All Players", nil)
-local Section = Tab:CreateSection("Troll Tools")
+local trolltoolsSection = Tab:CreateSection("Troll Tools")
 
