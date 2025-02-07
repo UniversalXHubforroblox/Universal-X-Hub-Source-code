@@ -178,11 +178,3 @@ local Button = localplayerTab:CreateButton({
    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = MAXHEALTH
    end,
 })
-
-local Button = localplayerTab:CreateButton({
-   Name = "Invinciblilty",
-   Callback = function())
-   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").MaxHealth = 1000000000000000000000000000000000000000000000000000000000000
-   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health = 1000000000000000000000000000000000000000000000000000000000000
-   end,
-})
